@@ -1,5 +1,5 @@
 # stage 1 build
-FROM alpine:3.14 AS base-image
+FROM alpine:3.15 AS base-image
 
 RUN apk add --no-cache build-base boost-dev g++ cmake ccache
 
@@ -10,7 +10,7 @@ RUN mkdir -p /src/build \
  && cmake --build . \
  && make
 
-FROM alpine:3.14
+FROM alpine:3.15
 
 RUN apk add libstdc++
 WORKDIR /src/
